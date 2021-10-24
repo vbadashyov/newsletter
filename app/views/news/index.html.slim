@@ -1,0 +1,28 @@
+p#notice
+  = notice
+h1
+  = t 'activerecord.models.news'
+table
+  thead
+    tr
+      th
+        = t 'activerecord.attributes.news.title'
+      th
+        = t 'activerecord.attributes.news.content'
+      th[colspan="3"]
+  tbody
+    - @news.each do |news|
+      tr
+
+      td
+        = news.title
+      td
+        = news.content
+      td
+        = link_to t('activerecord.attributes.news.show'), news
+      td
+        = link_to t('activerecord.attributes.news.edit'), edit_news_path(news)
+      td
+        = link_to t('activerecord.attributes.news.destroy'), news, method: :delete, data: { confirm: t('global.forms.messages.sure') }
+br
+= link_to t('activerecord.attributes.news.new_news'), new_news_path

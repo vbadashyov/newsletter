@@ -1,0 +1,61 @@
+ru:
+  activerecord:
+    models:
+      news: "Новости"
+    attributes:
+      news:
+        title: "Заголовок"
+        content: "Содержание"
+        show: "Показать"
+        edit: "Редактировтаь"
+        destroy: "Удалить"
+        new_news: "Создать новость"
+        back: "Вернуться"
+        editing_news: "Редактирование новости"
+        success_update: "Новость удачно отредактированна"
+        success_destroy: "Новость удалена"
+        max_redaction: "Превышено максимальное количество редактирований"
+  global:
+    forms:
+      messages:
+        sure: "Вы уверены?"
+        errors:
+          one: "Не удалось сохранить новость! Найдена одна ошибка:"
+          few: "Не удалось сохранить новость! Найдены %{count} ошибки:"
+          many: "Не удалось сохранить новость! Найдено %{count} ошибок:"
+          other: "Не удалось сохранить новость! Найдена %{count} ошибка:"
+      submit: Ок
+    menu:
+      home: "Главная"
+      news: "Новости"
+      my_news: "Мои новости"
+      edit_profile: "Настройки профиля"
+      logout: "Выход"
+  static_pages:
+    index:
+      welcome: "Добро пожаловать!"
+      services_html : "Мы предоставляем вам приложение для рассылки новостей"
+      news_feed: "Ваша новостная лента:"
+      havent_news: "К сожалению ваша новостная лента пуста"
+      daily: "ежедневная"
+      weekly: "еженедельная"
+      unsub: "отказ"
+      current_digest: "Ваша текущая рассылка"
+      updated_digest: "Тип рассылки обновлён"
+  accounts:
+    log_in: "Вход"
+    remember: "запомнить"
+    password: "Пароль"
+    email: "Почта"
+    forgot_password: "Забыли пароль?"
+    sign_up: "Регистрация"
+    current_password: "Текущий пароль"
+    confirm_password: "Подтвердите пароль"
+    edit_account: "Настройки профиля"
+    delete_acc: "Удалить аккаунт"
+    update: "Обновить"
+    need_current_pass: "необходимо ввести текущий пароль для внесения изменений"
+    minimum_pass: "минимальное число символов"
+    first_name: "Имя"
+    last_name: "Фамилия"
+    reset_password: "Сбросить пароль"

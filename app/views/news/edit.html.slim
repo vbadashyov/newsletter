@@ -1,0 +1,6 @@
+h1
+  = t 'activerecord.attributes.news.editing_news'
+= render 'form', news: @news
+= link_to t('activerecord.attributes.news.show'), @news
+|  | 
+= link_to t('activerecord.attributes.news.back'), news_index_path

@@ -1,0 +1,60 @@
+<%# TODO: проблемы с переводом в slim %>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <head>
+    <h1><%= t '.welcome' %> </h1>
+    <p><%= t 'static_pages.index.services_html' %></p>
+  </head>
+  <div>
+  <br >
+  <p><%= t('.current_digest') %>:</p>
+  <select id="digests">
+      <option value="daily"<% if @type_digest == "daily" %> selected="selected" <% end %>><%= t('static_pages.index.daily') %></option>
+      <option value="weekly"<% if @type_digest == "weekly" %> selected="selected" <% end %>><%= t('static_pages.index.weekly') %></option>
+      <option value="unsubscribe" <% if @type_digest == "unsubscribe" %> selected="selected" <% end %>><%= t('static_pages.index.unsub') %></option>
+  </select>
+  </div>
+  <br >
+  <% if @news == 0 %>
+    <h5> <%= t '.havent_news' %></h5>
+  <% else %>
+    <p><%= t '.news_feed' %></p>
+    <table>
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @news.each do |news| %>
+          <tr>
+            <td><%= news.title %></td>
+            <td><%= news.content %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+<script type="text/javascript">
+  $(function(){
+    $('#digests').on('change', function(){
+      digest = $("#digests").val();
+      var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+      $.ajax({
+        type: "POST",
+        url: "static_pages/update",
+        data:{ digest: digest, authenticity_token: AUTH_TOKEN },
+        dataType: "json",
+        success:function(data){
+          console.log('success')
+        },
+        error: function (jqXHR, exception) {
+          // alert( <%= t('.updated_digest') %> )
+          alert('digest updated')
+        },
+      });
+    });
+  });
+</script>

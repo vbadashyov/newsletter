@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title
+      | Newsletter
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    link[rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"]
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    p.notice
+      = notice
+    p.alert
+      = alert
+  body
+    nav
+      .container
+
+      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent"]
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+
+      ul.navbar-nav.mr-auto
+
+      li.nav-item.active
+
+      p.navbar-text.float-right
+        - if account_signed_in?
+          = link_to t('global.menu.edit_profile'), edit_account_registration_path, :class => 'navbar-link'
+          |  |
+          = link_to t("global.menu.logout"), destroy_account_session_path, method: :delete, :class => 'navbar-link'
+          li
+            = link_to t('global.menu.news'), news_index_path
+          li
+            = link_to t('global.menu.my_news'), root_path
+        - else
+          = link_to t('accounts.sign_up'), new_account_registration_path, :class => 'navbar-link'
+          |  |
+          = link_to t('accounts.log_in'), new_account_session_path, :class => 'navbar-link'
+      li
+        = link_to 'English', root_path(locale: :en)
+      li
+        = link_to 'Русский', root_path(locale: :ru)
+    = yield

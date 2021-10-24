@@ -1,0 +1,59 @@
+en:
+  activerecord:
+    models:
+      news:: "News"
+    attributes:
+      news:
+        title: "Title"
+        content: "Content"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        new_news: "New news"
+        back: "Back"
+        editing_news: "Editing news"
+        success_update: "News was successfully updated"
+        success_destroy: "News was successfully destroyed"
+        max_redaction: "You have reached the maximum
+             number of redactions"
+  global:
+    forms:
+      messages:
+        sure: "Are you sure?"
+        errors:
+          one: "One error prohibited this news from being saved"
+          other: "%{count} errors prohibited this news from being saved"
+      submit: Ok
+    menu:
+      home: "Home"
+      news: "News"
+      my_news: "My news"
+      edit_profile: "Edit profile"
+      logout: "Logout"
+  static_pages:
+    index:
+      welcome: "Welcome!"
+      services_html : "We provide you app for newsletter"
+      news_feed: "Your news feed:"
+      havent_news: "unfortunately, you have no news right now"
+      daily: "daily"
+      weekly: "weekly"
+      unsub: "unsubscribe"
+      current_digest: "Your current digest"
+  accounts:
+    log_in: "Log in"
+    remember: "remember me"
+    password: "Password"
+    email: "Email"
+    forgot_password: "Forgot your password?"
+    sign_up: "Sign up"
+    current_password: "Current password"
+    confirm_password: "Confirm password"
+    edit_account: "Edit account"
+    delete_acc: "Delete account"
+    update: "Update"
+    need_current_pass: "we need your current password to confirm your changes"
+    minimum_pass: "characters minimum"
+    first_name: "First name"
+    last_name: "Last name"
+    reset_password: "Send me reset password instructions"

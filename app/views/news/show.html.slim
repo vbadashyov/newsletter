@@ -1,0 +1,15 @@
+p#notice
+  = notice
+p
+  strong
+    = t 'activerecord.attributes.news.title'
+    | :
+  = @news.title
+p
+  strong
+    = t 'activerecord.attributes.news.content'
+    | :
+  = @news.content
+= link_to t('activerecord.attributes.news.edit'), edit_news_path(@news)
+|  | 
+= link_to t('activerecord.attributes.news.back'), news_index_path
